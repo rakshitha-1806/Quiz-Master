@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Mark Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+      <div class="container">
+        <div class="quiz-gradient-bg header">
+          <h1>Question Mark Arena</h1>
+          <p>Challenge your knowledge with our quizzes!</p>
+        </div>
+        
+        <div class="content">
+          <h2>Select a Category</h2>
+          
+          <div class="categories-grid">
+            <!-- Categories will be inserted here by JavaScript -->
+          </div>
+          
+          <div class="button-container">
+            <button id="startButton" class="btn-accent" disabled>Select a Category</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quizPage" class="page">
+      <div class="container">
+        <div class="quiz-header">
+          <div class="quiz-info">
+            <h2 id="categoryName">Category Quiz</h2>
+          </div>
+          <div class="quiz-progress">
+            <p id="questionProgress">Question 1/10</p>
+          </div>
+        </div>
+        
+        <div class="timer-bar">
+          <div id="timerProgress" class="timer-progress"></div>
+        </div>
+        
+        <div class="question-card">
+          <div class="question-header">
+            <span id="timeLeft" class="time-left">Time left: 01:00</span>
+            <span id="questionCounter" class="question-counter">1 of 10</span>
+          </div>
+          
+          <h2 id="questionText" class="question-text">Question text goes here</h2>
+          
+          <div id="optionsContainer" class="options-container">
+            <!-- Options will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Page -->
+    <div id="resultsPage" class="page">
+      <div class="container">
+        <div id="resultsHeader" class="quiz-gradient-bg header">
+          <h1>Quiz Results</h1>
+          <p id="resultsCategoryName">Category</p>
+        </div>
+        
+        <div class="content">
+          <div class="results-summary">
+            <div class="score-circle">
+              <svg viewBox="0 0 100 100">
+                <circle class="score-bg" cx="50" cy="50" r="40" fill="transparent"></circle>
+                <circle id="scoreCircle" class="score-progress" cx="50" cy="50" r="40" fill="transparent" 
+                        stroke-dasharray="251.2" stroke-dashoffset="0"></circle>
+                <text id="scoreText" x="50" y="50" dominant-baseline="middle" text-anchor="middle">0%</text>
+              </svg>
+            </div>
+            <p id="feedbackText" class="feedback-text">Keep practicing!</p>
+            <p id="scoreDetails" class="score-details">
+              You got 0 out of 10 questions right
+            </p>
+          </div>
+          
+          <h2>Question Summary</h2>
+          
+          <div id="questionsSummary" class="questions-summary">
+            <!-- Results will be inserted here by JavaScript -->
+          </div>
+          
+          <div class="button-container">
+            <button id="restartButton" class="btn-accent">Try Another Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="quizData.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
